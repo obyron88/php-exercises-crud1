@@ -40,7 +40,7 @@
         <h1> Exercice 4 </h1>
          <?php
 
-         $reponse = $pdo->query('SELECT * FROM clients WHERE card = 1');
+         $reponse = $pdo->query('SELECT * FROM clients JOIN cards ON clients.cardNumber = cards.cardNumber JOIN cardTypes ON cards.cardTypesId = cardTypes.id WHERE cardTypes.id = 1');
              $reponse1 = $reponse->fetchAll();
 
              foreach ($reponse1 as $value) {
